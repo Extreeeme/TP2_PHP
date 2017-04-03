@@ -1,0 +1,44 @@
+@font-face {
+	font-family:'RobotoL';
+	src:url(../font/Roboto-l.ttf);
+}
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'RobotoL';
+}
+
+nav{
+	background-color: lime;
+	border-bottom: #47c146 5px solid;
+	ul{
+		display: flex;
+
+		li{
+			list-style: none;
+			margin: 20px;
+			padding: 20px;
+			background-color: #47c146;
+
+			a{
+				color: white;
+				text-decoration: none;
+				font-family: 'RobotoL';
+			}
+		}
+	}
+}
+
+h1{
+	margin-left: 20px;
+}
+
+table{
+	margin-left: 20px;
+	tr{
+		td{
+			border: 1px solid grey;
+			padding: 5px;
+		}
+	}
+}
