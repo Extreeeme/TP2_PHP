@@ -22,6 +22,19 @@
 					<td><?=$value->adressComplete;?></td>
 					<td><?=$value->phoneNumber;?></td>
 					<td><?=$value->statut;?></td>
+					<td>
+						<form action="index.php?p=Clients.details" method="GET">
+							<input type="hidden" name="p" value="Clients.details" />
+							<button type="submit" name="id" value="<?=$value->id?>" >Détails</button>
+						</form>
+					</td>
+
+					<td>
+						<form action="index.php?p=Clients.credit" method="GET">
+							<input type="hidden" name="p" value="Clients.credit" />
+							<button type="submit" name="id" value="<?=$value->id?>" >Crédits</button>
+						</form>
+					</td>
 				</tr>
 			<?php endforeach ?>
 		

@@ -8,18 +8,35 @@ use Core\Table\Table;
 */
 class ClientTable extends Table
 {
-	public function allClients()
+	public function findClient($id)
 	{
-		return $this->query("SELECT 
+		return $this->query("SELECT clients.id,
 			clients.name,
 			clients.firstName,
 			clients.birthDate,
 			clients.phoneNumber,
 			clients.zipCode,
 			clients.adress,
-			statutsMaritals.statut
+			statuts.statut
 			FROM clients 
-			LEFT JOIN statutsMaritals
-			ON clients.maritalSituation = statutsMaritals.id");
+			LEFT JOIN statuts
+			ON clients.maritalSituation = statuts.id
+			WHERE clients.id = ?" ,[$id], true);
+	}
+
+	public function allClients()
+	{
+		return $this->query("SELECT 
+			clients.id,
+			clients.name,
+			clients.firstName,
+			clients.birthDate,
+			clients.phoneNumber,
+			clients.zipCode,
+			clients.adress,
+			statuts.statut
+			FROM clients 
+			LEFT JOIN statuts
+			ON clients.maritalSituation = statuts.id");
 	}
 }

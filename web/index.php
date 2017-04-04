@@ -25,9 +25,12 @@ if ($page==='home') {  // Charge centre page ($content)
 	require ROOT.'/pages/index.php';
 }elseif ($page==='Clients') {
 	require ROOT.'/pages/clients/index.php';
-}
-elseif ($page==='Clients.ajout') {
+}elseif ($page==='Clients.ajout') {
 	require ROOT.'/pages/clients/ajout.php';
+}elseif ($page==='Clients.details') {
+	require ROOT.'/pages/clients/details.php';
+}elseif ($page==='Clients.credit') {
+	require ROOT.'/pages/clients/credit.php';
 }elseif ($page==='login') {
 	require ROOT.'/pages/users/login.php';
 }elseif ($page==='Disconnect') {
