@@ -18,8 +18,10 @@
         <li><a href="index.php?p=Clients.ajout">Ajouter un client</a></li>
       </ul>
     </nav>
-    <?=$content;?>
 
+    <div>
+      <?=$content;?>
+    </div>
 </body>
 
 	<!-- SCRIPTS LOADS -->

@@ -1,7 +1,7 @@
 <?php 
 	$id = $_GET["id"];
 	$user =  App::getInstance()->getTable('Client')->findClient($id);
-	$credit = App::getInstance()->getTable('Credit')->all();
+	$credit = App::getInstance()->getTable('Credit')->allByClient($id);
 ?>
 
 <h1>Liste des clients</h1>
@@ -15,12 +15,12 @@
 			<td>Adresse</td>
 			<td>Numéro de téléphone</td>
 			<td>Status Marital</td>
-			<?php foreach ($credit as $key => $value): ?>
-				<?php if ($value->clients_id == $user->id): ?>
+			<?php if ($credit): ?>
+				<?php foreach ($credit as $key => $value): ?>
 					<td>Organisme</td>
 					<td>Montant</td>
-				<?php endif ?>
-			<?php endforeach ?>
+				<?php endforeach ?>
+			<?php endif ?>
 		</tr>
 	</thead>
 
@@ -32,12 +32,13 @@
 					<td><?=$user->adressComplete;?></td>
 					<td><?=$user->phoneNumber;?></td>
 					<td><?=$user->statut;?></td>
-					<?php foreach ($credit as $key => $value): ?>
-						<?php if ($value->clients_id == $user->id): ?>
+					<?php if ($credit): ?>
+						<?php foreach ($credit as $key => $value): ?>
 							<td><?=$value->organisme?></td>
 							<td><?=$value->montant?></td>
-						<?php endif ?>
-					<?php endforeach ?>
+						<?php endforeach ?>
+					<?php endif ?>
+					
 				</tr>	
 	</tbody>
 </table>
